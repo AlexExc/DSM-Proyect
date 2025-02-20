@@ -1,0 +1,3 @@
+[2024-11-08 18:39:19] INFORMACION: Programa iniciado.
+[2024-11-08 18:39:19] DEPURACION: Información de depuración.
+[2024-11-08 18:39:19] ERROR: Ocurrió un error.

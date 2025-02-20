@@ -1,0 +1,38 @@
+/* Estilo para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;  /* Elimina espacios entre las celdas */
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #444;  /* Borde de las celdas */
+}
+
+th {
+    background-color: #444;  /* Fondo oscuro para los encabezados */
+    color: #FFD700;  /* Texto dorado para los encabezados */
+    font-size: 1.2rem;
+}
+
+td {
+    background-color: #333;  /* Fondo oscuro para las celdas */
+    color: #EAEAEA;  /* Texto claro para las celdas */
+}
+
+tr:nth-child(even) td {
+    background-color: #222;  /* Fondo ligeramente más oscuro para las filas pares */
+}
+
+tr:hover td {
+    background-color: #555;  /* Color de fondo cuando el mouse pasa sobre una fila */
+}
+
+caption {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-bottom: 10px;
+    text-align: center;
+}
