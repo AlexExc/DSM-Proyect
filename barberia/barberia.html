@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbería Estilo</title>
+  <link rel="stylesheet" href="estilo.css">
+  <!-- Iconos de Boxicons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/boxicons@2.0.9/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Barbería Estilo</div>
+    <i id="menu-icon" class="bx bx-menu"></i>
+    <nav class="navbar">
+      <a href="#galeria" class="active">Galería</a>
+      <a href="#precios">Precios</a>
+      <a href="#citas">Agendar</a>
+      <a href="#servicios">Servicios</a>
+    </nav>
+  </header>
+
+  <!-- Sección Galería -->
+  <section id="galeria" class="portfolio">
+    <h2 class="heading">Tipos de Cortes</h2>
+    <h3>Y somos expertos en... <span class="multiple-text"></span></h3>
+    <div class="portfolio-container">
+      <div class="portfolio-box">
+        <img src="galeria/3d169cbafb63aedb027af73b62896246.jpg" alt="Corte Clásico">
+        <div class="portfolio-layer">
+          <h4>Corte Clásico</h4>
+          <p>Perfecto para un estilo atemporal.</p>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="galeria/moderno.jpeg" alt="Corte Moderno">
+        <div class="portfolio-layer">
+          <h4>Corte Moderno</h4>
+          <p>Ideal para un look fresco y actualizado.</p>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="galeria/fade.jpg" alt="Corte Fade">
+        <div class="portfolio-layer">
+          <h4>Corte Fade</h4>
+          <p>Estilo degradado con precisión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Precios -->
+  <section id="precios" class="about">
+    <h2 class="heading">Menú de Precios</h2>
+    <div class="about-content">
+      <h3>Corte Clásico: <span>$200 MXN</span></h3>
+      <h3>Corte Moderno: <span>$250 MXN</span></h3>
+      <h3>Corte Fade: <span>$300 MXN</span></h3>
+      <h3>Afeitado: <span>$150 MXN</span></h3>
+    </div>
+  </section>
+
+  <!-- Sección Agendar Citas -->
+  <section id="citas" class="contact">
+    <h2 class="heading">Agendar una Cita</h2>
+    <form action="#">
+      <div class="input-box">
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="tel" placeholder="Teléfono" required>
+      </div>
+      <textarea rows="5" placeholder="Detalles del servicio" required></textarea>
+      <button type="submit" class="btn">Agendar Cita</button>
+    </form>
+  </section>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbería Estilo</title>
+</head>
+<body>
+  
+  </form>
+  <p id="message"></p>
+
+  <script>
+    document.getElementById("appointment-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const telefono = document.getElementById("telefono").value;
+      const correo = document.getElementById("correo").value;
+      const detalles = document.getElementById("detalles").value;
+
+      fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, telefono, correo, detalles }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("message").textContent = data.message;
+          document.getElementById("appointment-form").reset();
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          document.getElementById("message").textContent =
+            "Ocurrió un error al enviar la cita.";
+        });
+    });
+  </script>
+</body>
+</html>
+
+
+  <!-- Sección Servicios -->
+  <section id="servicios" class="services">
+    <h2 class="heading">Nuestros Servicios</h2>
+    <div class="services-container">
+      <div class="services-box">
+        <i class="fas fa-cut"></i>
+        <h3>Cortes de Cabello</h3>
+        <p>Adaptados a tu estilo y personalidad.</p>
+      </div>
+      <div class="services-box">
+        <i class="fas fa-beard"></i>
+        <h3>Afeitado</h3>
+        <p>Con navaja tradicional y cuidado facial.</p>
+      </div>
+      <div class="services-box">
+        <i class="fas fa-shampoo"></i>
+        <h3>Tratamientos Capilares</h3>
+        <p>Hidratación, color y más.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+        <div class="social-media">
+            <a href="https://www.facebook.com/share/15Kw7nTfMJ/"><i class="bx bxl-facebook"></i></a>
+            <a href="https://x.com/soy_lit_?t=2ghdH8vqbm31VFzJhgXbOw&s=09"><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.instagram.com/alex.exc_?igsh=bnd4czVlcjdsMmwz"><i class="bx bxl-instagram-alt"></i></a>
+          </div>
+      <p>&copy; 2024 Barbería Estilo. Todos los derechos reservados.</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#top"><i class="fas fa-chevron-up"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="js.js"></script>
+</body>
+</html>
